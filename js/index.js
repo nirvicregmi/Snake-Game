@@ -4,13 +4,14 @@ const foodSound = new Audio('food.mp3');
 const gameOverSound = new Audio('gameover.mp3');
 const moveSound = new Audio('move.mp3');
 const musicSound = new Audio('music.mp3');
-let speed = 15;
+let speed = 19;
 let lastPaintTime = 0;
 let snakeArr = [
     {x:8, y:10}
 ]
 
 food ={x:6, y:7};
+
 let score = 0;
 
 // alert("Red is head, Yellow is food")
