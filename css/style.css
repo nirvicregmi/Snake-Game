@@ -25,18 +25,56 @@
     grid-template-columns: repeat(18, 1fr);
 }
 
-.head{
-    background-color: rgb(60, 100, 0);
-    border: 2px solid white;
-    border-radius: 9px;
-    transform: scale(1.02);
+.head {
+    background: radial-gradient(circle at center, #3c6400, #2f5200); /* Gradient for a 3D effect */
+    border: 2px solid #d4d4d4; /* Softer, off-white border for a natural look */
+    border-radius: 50%; /* Round head for realism */
+    transform: scale(1.1); /* Slight enlargement for prominence */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5), 0 5px 10px rgba(0, 0, 0, 0.4); /* Inner shadow for depth */
+    position: relative;
 }
 
-.snake{
-    background-color: greenyellow;
-    border: .25vmin solid white;
-    border-radius: 12px;
+.head::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    height: 30%;
+    background: radial-gradient(circle at center, #000, #444); /* Dark eyes */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
 }
+
+.snake {
+    background: linear-gradient(45deg, #6abd45 25%, #5fa83e 25%, #5fa83e 50%, #6abd45 50%, #6abd45 75%, #5fa83e 75%, #5fa83e 100%); /* Scaly pattern effect */
+    background-size: 20px 20px; /* Adjust scale of scales */
+    border: .25vmin solid #d4d4d4; /* Softer border for cohesion */
+    border-radius: 50%; /* Rounded segments */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5), 0 3px 6px rgba(0, 0, 0, 0.3); /* Subtle 3D depth */
+    transition: all 0.3s ease; /* Smooth transitions for lifelike movement */
+    position: relative;
+}
+
+.snake::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    background: radial-gradient(circle at center, transparent, rgba(0, 0, 0, 0.2));
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.7; /* Glossy finish for a more lifelike texture */
+}
+
+.snake:hover {
+    background-color: #74d060; /* Brighten slightly on hover */
+    transform: scale(1.08); /* Enlarges on hover for interactivity */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6); /* Stronger shadow for emphasis */
+}
+
 
 .food{
     background-color: pink;
